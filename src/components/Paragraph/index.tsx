@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {StyleProp, Text, TextStyle} from 'react-native';
 
 import {colors} from '../../utils/colors';
 import {fontFamily} from '../../utils/constant';
@@ -11,10 +11,11 @@ type TProps = {
   font?: string;
   size?: number;
   color?: string;
+  style?: StyleProp<TextStyle>;
 };
 
 const Paragraph = (props: TProps) => {
-  const {text, font, size, color} = props;
+  const {text, font, size, color, style} = props;
 
   return (
     <Text
@@ -25,6 +26,7 @@ const Paragraph = (props: TProps) => {
           fontFamily: font ?? fontFamily.regular,
           color: color ?? colors.white,
         },
+        style,
       ]}>
       {text}
     </Text>

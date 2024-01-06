@@ -25,9 +25,6 @@
 		7C8AC95297C34D3AAC0C205F /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAE3F8DA26154501ACFE1E03 /* FontAwesome5_Regular.ttf */; };
 		7D7FC69C40874AEE9DC36B42 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2661EB7228AA44CCB8BFF502 /* Poppins-SemiBold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		887453CB7DD043F8B53306E4 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF53BBE1A7A54FF6BA5A14B9 /* Octicons.ttf */; };
-		900FCB0F8D37472A9686F06B /* FontAwesome6_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CCFBF4420C04A3DAFE89AF0 /* FontAwesome6_Regular.ttf */; };
-		9069EEB4ECB840C1A26810FF /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EF58DA947404158A83FA235 /* MaterialIcons.ttf */; };
 		90C39EED897D4F9984118F93 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA62C15B0C2440DDA141F8E6 /* Poppins-Regular.ttf */; };
 		948F3CA44F8B4B7AA4C773D3 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBA434B97C1A40AE985650C4 /* FontAwesome6_Brands.ttf */; };
 		9584B66365514A7FA6F6395C /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EC6EFE1FDE14F7E8DABF5A5 /* FontAwesome5_Solid.ttf */; };
@@ -56,7 +53,6 @@
 		00E356EE1AD99517003FC87E /* todolistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = todolistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* todolistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = todolistTests.m; sourceTree = "<group>"; };
-		0A6580C0BD53440D8F3FF1B0 /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome6_Solid.ttf; path = ../assets/fonts/FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* todolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todolist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = todolist/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = todolist/AppDelegate.mm; sourceTree = "<group>"; };
@@ -72,10 +68,8 @@
 		3B4392A12AC88292D35C810B /* Pods-todolist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todolist.debug.xcconfig"; path = "Target Support Files/Pods-todolist/Pods-todolist.debug.xcconfig"; sourceTree = "<group>"; };
 		3CE8DCC409414016AC92C837 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = ../assets/fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 		4AC386545C0641A48E65E07C /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		53F1EC3053B742F4B2729806 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = ../assets/fonts/FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-todolist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todolist.release.xcconfig"; path = "Target Support Files/Pods-todolist/Pods-todolist.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-todolist-todolistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todolist-todolistTests.debug.xcconfig"; path = "Target Support Files/Pods-todolist-todolistTests/Pods-todolist-todolistTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5CCFBF4420C04A3DAFE89AF0 /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome6_Regular.ttf; path = ../assets/fonts/FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-todolist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-todolist.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A1BF69BB2F4101A55DAC21 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = ../assets/fonts/Entypo.ttf; sourceTree = "<group>"; };
 		6D40C310535A4F74B6ACC87B /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = ../assets/fonts/AntDesign.ttf; sourceTree = "<group>"; };
@@ -265,7 +259,6 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				722EBE772B053A534006CC0A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -386,23 +379,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-todolist/Pods-todolist-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		722EBE772B053A534006CC0A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-todolist/Pods-todolist-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-todolist/Pods-todolist-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-todolist/Pods-todolist-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
