@@ -1,6 +1,8 @@
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 
+import {SearchNormal} from 'iconsax-react-native';
+
 import Card from '../../components/Card';
 import Container from '../../components/Container';
 import RowSystem from '../../components/RowSystem';
@@ -28,7 +30,8 @@ const Home = () => {
         <TouchableOpacity style={globalStyles.inputContainer}>
           <RowSystem justifyContent="space-between">
             <Paragraph text="Search" color={colors.gray[100]} />
-            <Paragraph text="icon" color={colors.gray[100]} />
+
+            <SearchNormal size={24} color={colors.gray[100]} />
           </RowSystem>
         </TouchableOpacity>
       </SectionContainer>
