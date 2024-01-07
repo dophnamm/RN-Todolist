@@ -15,6 +15,7 @@ import {colors} from '../../utils/colors';
 import {fontFamily} from '../../utils/constant';
 
 import {globalStyles} from '../../styles/globalStyles';
+import CircularChart from '../../components/CircularChart';
 
 const Home = () => {
   return (
@@ -56,7 +57,7 @@ const Home = () => {
                 font={fontFamily.semibold}
               />
 
-              <Paragraph text="30/40 tasks" color={colors.gray[150]} />
+              <Paragraph text="30/40 tasks done" color={colors.gray[150]} />
 
               <Space height={12} />
 
@@ -66,7 +67,7 @@ const Home = () => {
             </View>
 
             <View>
-              <Paragraph text="Circle chart" />
+              <CircularChart value={80} />
             </View>
           </RowSystem>
         </Card>
