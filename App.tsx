@@ -1,11 +1,12 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
 
 import Home from './src/pages/Home';
+import {globalStyles} from './src/styles/globalStyles';
 
 function App(): React.JSX.Element {
   return (
-    <>
+    <SafeAreaView style={globalStyles['flex-1']}>
       <StatusBar
         translucent
         barStyle="light-content"
@@ -13,7 +14,7 @@ function App(): React.JSX.Element {
       />
 
       <Home />
-    </>
+    </SafeAreaView>
   );
 }
 
