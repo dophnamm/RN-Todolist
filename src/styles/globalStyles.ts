@@ -39,4 +39,12 @@ export const globalStyles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: colors.purple[100],
   },
+
+  tag: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 100,
+    backgroundColor: colors.blue[100],
+    width: 'auto',
+  },
 });
