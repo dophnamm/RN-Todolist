@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
-
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Category, Notification, SearchNormal, Edit} from 'iconsax-react-native';
 
 import Card from '../../components/Card';
@@ -20,9 +20,17 @@ import {fontFamily} from '../../utils/constant';
 
 import {globalStyles} from '../../styles/globalStyles';
 
-const Home = () => {
+import {RootStackParamList} from '../../routes';
+
+type TProps = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Home'>;
+};
+
+const Home = (props: TProps) => {
+  const {navigation} = props;
+
   return (
-    <View style={{flex: 1}}>
+    <View style={[{flex: 1}]}>
       <Container>
         <SectionContainer>
           <RowSystem justifyContent="space-between">
@@ -42,7 +50,9 @@ const Home = () => {
         </SectionContainer>
 
         <SectionContainer>
-          <TouchableOpacity style={globalStyles.inputContainer}>
+          <TouchableOpacity
+            style={globalStyles.inputContainer}
+            onPress={() => navigation.navigate('Search')}>
             <RowSystem justifyContent="space-between" alignItems="center">
               <Paragraph text="Search task" color={colors.gray[150]} />
 
@@ -188,6 +198,7 @@ const Home = () => {
         <TouchableOpacity>
           <Tag
             text="Add new task +"
+            onPress={() => navigation.navigate('AddNewTask')}
             tagStyle={[globalStyles['px-4'], globalStyles['py-3']]}
             textStyle={[
               globalStyles['text-md'],
