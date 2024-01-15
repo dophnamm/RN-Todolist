@@ -1,7 +1,8 @@
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
-import Home from './src/pages/Home';
+import Routes from './src/routes';
 import {globalStyles} from './src/styles/globalStyles';
 
 function App(): React.JSX.Element {
@@ -13,7 +14,9 @@ function App(): React.JSX.Element {
         backgroundColor="transparent"
       />
 
-      <Home />
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
     </SafeAreaView>
   );
 }

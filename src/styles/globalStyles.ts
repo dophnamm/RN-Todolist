@@ -7,7 +7,6 @@ export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.black[100],
-    paddingHorizontal: 20,
   },
 
   section: {
@@ -18,6 +17,18 @@ export const globalStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  itemsCenter: {
+    alignItems: 'center',
+  },
+
+  justifyCenter: {
+    justifyContent: 'center',
+  },
+
+  justifyStart: {
+    justifyContent: 'flex-start',
   },
 
   text: {
@@ -31,6 +42,7 @@ export const globalStyles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 16,
     backgroundColor: colors.purple[100],
+    flexDirection: 'row',
   },
 
   card: {
@@ -66,6 +78,22 @@ export const globalStyles = StyleSheet.create({
     paddingHorizontal: 56,
   },
 
+  button: {
+    padding: 12,
+    borderRadius: 12,
+  },
+
+  buttonPrimary: {
+    backgroundColor: colors.blue[100],
+  },
+
+  modal: {
+    backgroundColor: colors.white,
+    padding: 16,
+    width: '80%',
+    borderRadius: 12,
+  },
+
   'text-sm': {
     fontSize: 14,
   },
@@ -80,6 +108,10 @@ export const globalStyles = StyleSheet.create({
 
   'text-center': {
     textAlign: 'center',
+  },
+
+  'flex-0': {
+    flex: 0,
   },
 
   'flex-1': {
