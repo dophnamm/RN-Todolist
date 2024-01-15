@@ -72,7 +72,11 @@ const Input = (props: TProps) => {
 
           {allowClear && value ? (
             <TouchableOpacity onPress={() => handleValueChange('')}>
-              <CloseCircle size="16" color={colors.white} />
+              <CloseCircle
+                size="16"
+                color={colors.gray[150]}
+                style={{marginTop: !multiple ? 4 : 8, marginLeft: 4}}
+              />
             </TouchableOpacity>
           ) : null}
         </View>

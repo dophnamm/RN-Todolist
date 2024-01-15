@@ -87,6 +87,13 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: colors.blue[100],
   },
 
+  modal: {
+    backgroundColor: colors.white,
+    padding: 16,
+    width: '80%',
+    borderRadius: 12,
+  },
+
   'text-sm': {
     fontSize: 14,
   },

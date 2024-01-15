@@ -8,6 +8,7 @@ import Input from '../../components/Input';
 import Container from '../../components/Container';
 import RowSystem from '../../components/RowSystem';
 import Paragraph from '../../components/Paragraph';
+import Datepicker from '../../components/Datepicker';
 import SectionContainer from '../../components/SectionContainer';
 
 import {globalStyles} from '../../styles/globalStyles';
@@ -19,6 +20,7 @@ type TProps = {
 type TFormTask = {
   title?: string;
   description?: string;
+  dueDate?: Date;
 };
 
 const AddNewTask = (props: TProps) => {
@@ -30,6 +32,15 @@ const AddNewTask = (props: TProps) => {
     const values = {
       ...task,
       [key]: value,
+    };
+
+    setTask(values);
+  };
+
+  const handleDateChange = (value: Date) => {
+    const values: TFormTask = {
+      ...task,
+      dueDate: value,
     };
 
     setTask(values);
@@ -55,6 +66,14 @@ const AddNewTask = (props: TProps) => {
           numberOfLine={4}
           value={task.description}
           onChange={value => handleFieldChange('description', value)}
+        />
+
+        <Datepicker
+          type="date"
+          label="Due date"
+          placeholder="Choice"
+          selected={task.dueDate}
+          onSelect={handleDateChange}
         />
       </RowSystem>
 
