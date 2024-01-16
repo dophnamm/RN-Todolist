@@ -1,6 +1,6 @@
 import React from 'react';
 import {TextInput, TouchableOpacity, View} from 'react-native';
-import {CloseCircle} from 'iconsax-react-native';
+import {CloseCircle, Eye, EyeSlash} from 'iconsax-react-native';
 
 import Paragraph from '../Paragraph';
 import RowSystem from '../RowSystem';
@@ -18,6 +18,7 @@ type TProps = {
   allowClear?: boolean;
   multiple?: boolean;
   numberOfLine?: number;
+  type?: 'text' | 'password';
   onChange?: (value: string) => void;
 };
 
@@ -31,12 +32,21 @@ const Input = (props: TProps) => {
     allowClear = false,
     multiple,
     numberOfLine,
+    type = 'text',
     onChange,
   } = props;
+
+  const [isShow, setIsShow] = React.useState<boolean>(false);
 
   const handleValueChange = (text: string) => {
     onChange?.(text);
   };
+
+  const iconFieldPassword = isShow ? (
+    <Eye size={16} color={colors.gray[150]} style={{marginTop: 4}} />
+  ) : (
+    <EyeSlash size={16} color={colors.gray[150]} style={{marginTop: 4}} />
+  );
 
   return (
     <View>
@@ -66,17 +76,25 @@ const Input = (props: TProps) => {
             autoComplete="off"
             multiline={multiple}
             numberOfLines={numberOfLine}
+            secureTextEntry={type === 'password' && !isShow ? true : false}
+            autoCapitalize="none"
           />
 
           {suffix ? <View>{suffix}</View> : null}
 
-          {allowClear && value ? (
+          {allowClear && type !== 'password' && value ? (
             <TouchableOpacity onPress={() => handleValueChange('')}>
               <CloseCircle
-                size="16"
+                size={16}
                 color={colors.gray[150]}
                 style={{marginTop: !multiple ? 4 : 8, marginLeft: 4}}
               />
+            </TouchableOpacity>
+          ) : null}
+
+          {type === 'password' ? (
+            <TouchableOpacity onPress={() => setIsShow(!isShow)}>
+              {iconFieldPassword}
             </TouchableOpacity>
           ) : null}
         </View>

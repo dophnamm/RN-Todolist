@@ -11,6 +11,7 @@ export const globalStyles = StyleSheet.create({
 
   section: {
     marginBottom: 16,
+    width: '100%',
   },
 
   row: {

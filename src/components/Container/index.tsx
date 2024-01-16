@@ -23,11 +23,12 @@ type TProps = {
   right?: ReactNode;
   left?: ReactNode;
   style?: StyleProp<ViewStyle>;
+  contentContainerStyle?: StyleProp<ViewStyle>;
   goBack?: () => void;
 };
 
 const Container = (props: TProps) => {
-  const {children, title, style, goBack} = props;
+  const {children, title, style, contentContainerStyle, goBack} = props;
 
   return (
     <View style={[globalStyles.container, style]}>
@@ -54,7 +55,8 @@ const Container = (props: TProps) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
-        style={globalStyles['px-5']}>
+        style={[globalStyles['px-5']]}
+        contentContainerStyle={contentContainerStyle}>
         {children}
       </ScrollView>
     </View>

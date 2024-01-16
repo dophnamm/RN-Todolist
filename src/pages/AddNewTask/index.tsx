@@ -2,7 +2,7 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-import {RootStackParamList} from '../../routes';
+import {TRootStackParamList} from '../../routes';
 
 import Input from '../../components/Input';
 import Container from '../../components/Container';
@@ -14,7 +14,7 @@ import SectionContainer from '../../components/SectionContainer';
 import {globalStyles} from '../../styles/globalStyles';
 
 type TProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'AddNewTask'>;
+  navigation: NativeStackNavigationProp<TRootStackParamList, 'AddNewTask'>;
 };
 
 type TFormTask = {
