@@ -1,7 +1,13 @@
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {Category, Notification, SearchNormal, Edit} from 'iconsax-react-native';
+import {
+  LogoutCurve,
+  Notification,
+  SearchNormal,
+  Edit,
+} from 'iconsax-react-native';
+import auth from '@react-native-firebase/auth';
 
 import Card from '../../components/Card';
 import Tag from '../../components/Tag';
@@ -20,28 +26,36 @@ import {fontFamily} from '../../utils/constant';
 
 import {globalStyles} from '../../styles/globalStyles';
 
-import {RootStackParamList} from '../../routes';
+import {TRootStackParamList} from '../../routes';
 
 type TProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Home'>;
+  navigation: NativeStackNavigationProp<TRootStackParamList, 'Home'>;
 };
 
 const Home = (props: TProps) => {
   const {navigation} = props;
+
+  const user = auth().currentUser;
+
+  const handleLogout = () => auth().signOut();
+  const handleSearch = () => navigation.navigate('Search');
+  const handleAddNewTask = () => navigation.navigate('AddNewTask');
 
   return (
     <View style={[{flex: 1}]}>
       <Container>
         <SectionContainer>
           <RowSystem justifyContent="space-between">
-            <Category size={24} color={colors.white} />
+            <TouchableOpacity onPress={handleLogout}>
+              <LogoutCurve size={24} color={colors.white} />
+            </TouchableOpacity>
 
             <Notification size={24} color={colors.white} />
           </RowSystem>
         </SectionContainer>
 
         <SectionContainer>
-          <Paragraph text="Hi, Jason" color={colors.gray[100]} />
+          <Paragraph text={`Hi, ${user?.email}`} color={colors.gray[100]} />
           <Paragraph
             size={16}
             font={fontFamily.semibold}
@@ -51,13 +65,15 @@ const Home = (props: TProps) => {
 
         <SectionContainer>
           <TouchableOpacity
-            style={globalStyles.inputContainer}
-            onPress={() => navigation.navigate('Search')}>
-            <RowSystem justifyContent="space-between" alignItems="center">
-              <Paragraph text="Search task" color={colors.gray[150]} />
+            style={[globalStyles.inputContainer, globalStyles.itemsCenter]}
+            onPress={handleSearch}>
+            <Paragraph
+              text="Search task"
+              color={colors.gray[150]}
+              style={globalStyles['flex-1']}
+            />
 
-              <SearchNormal size={24} color={colors.gray[100]} />
-            </RowSystem>
+            <SearchNormal size={24} color={colors.gray[100]} />
           </TouchableOpacity>
         </SectionContainer>
 
@@ -198,7 +214,7 @@ const Home = (props: TProps) => {
         <TouchableOpacity>
           <Tag
             text="Add new task +"
-            onPress={() => navigation.navigate('AddNewTask')}
+            onPress={handleAddNewTask}
             tagStyle={[globalStyles['px-4'], globalStyles['py-3']]}
             textStyle={[
               globalStyles['text-md'],
