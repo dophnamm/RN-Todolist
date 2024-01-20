@@ -30,4 +30,12 @@ export const colors = {
   red: {
     500: '#ED1B2E',
   },
+
+  aqua: {
+    10: '#E5EEF2',
+    50: '#E6FBFF',
+    100: '#ECF8FD',
+    600: '#7BA9BC',
+    700: '#467385',
+  },
 };
