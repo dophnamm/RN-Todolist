@@ -12,10 +12,11 @@ type TProps = {
   size?: number;
   color?: string;
   style?: StyleProp<TextStyle>;
+  numberOfLine?: number;
 };
 
 const Paragraph = (props: TProps) => {
-  const {text, font, size, color, style} = props;
+  const {text, font, size, color, style, numberOfLine} = props;
 
   return (
     <Text
@@ -27,7 +28,8 @@ const Paragraph = (props: TProps) => {
           color: color ?? colors.white,
         },
         style,
-      ]}>
+      ]}
+      numberOfLines={numberOfLine}>
       {text}
     </Text>
   );

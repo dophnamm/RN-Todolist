@@ -10,8 +10,11 @@ import RowSystem from '../../components/RowSystem';
 import Paragraph from '../../components/Paragraph';
 import Datepicker from '../../components/Datepicker';
 import SectionContainer from '../../components/SectionContainer';
+import Dropdown, {TDropdownItem} from '../../components/Dropdown';
 
 import {globalStyles} from '../../styles/globalStyles';
+
+import {useGetUsers} from './hooks';
 
 type TProps = {
   navigation: NativeStackNavigationProp<TRootStackParamList, 'AddNewTask'>;
@@ -20,13 +23,16 @@ type TProps = {
 type TFormTask = {
   title?: string;
   description?: string;
-  dueDate?: Date;
+  dueDate?: string | null;
+  members?: string[];
 };
 
 const AddNewTask = (props: TProps) => {
   const {navigation} = props;
 
   const [task, setTask] = React.useState<TFormTask>({});
+
+  const {users} = useGetUsers();
 
   const handleFieldChange = (key: keyof TFormTask, value?: string) => {
     const values = {
@@ -37,14 +43,38 @@ const AddNewTask = (props: TProps) => {
     setTask(values);
   };
 
-  const handleDateChange = (value: Date) => {
-    const values: TFormTask = {
+  const handleDateChange = (value: string | null) => {
+    const newValues: TFormTask = {
       ...task,
       dueDate: value,
     };
 
-    setTask(values);
+    setTask(newValues);
   };
+
+  const handleSelectMember = (values: string[]) => {
+    const newValues: TFormTask = {
+      ...task,
+      members: values,
+    };
+
+    setTask(newValues);
+  };
+
+  const usersOption: TDropdownItem[] = React.useMemo(() => {
+    if (!users.length) {
+      return [];
+    }
+
+    return users.map(user => ({
+      label: user.name,
+      value: user.id,
+    }));
+  }, [users]);
+
+  const userSelected = usersOption
+    .filter(user => task.members && task.members.includes(user.value))
+    .map(item => item.label);
 
   return (
     <Container title="Add new task" goBack={navigation.goBack}>
@@ -74,6 +104,15 @@ const AddNewTask = (props: TProps) => {
           placeholder="Choice"
           selected={task.dueDate}
           onSelect={handleDateChange}
+        />
+
+        <Dropdown
+          multiple
+          label="Members"
+          items={usersOption}
+          selected={task.members}
+          placeholder={userSelected.join(', ')}
+          onSelect={handleSelectMember}
         />
       </RowSystem>
 
