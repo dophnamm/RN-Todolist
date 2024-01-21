@@ -8,6 +8,7 @@ import {
   Edit,
 } from 'iconsax-react-native';
 import auth from '@react-native-firebase/auth';
+import dayjs from 'dayjs';
 
 import Card from '../../components/Card';
 import Tag from '../../components/Tag';
@@ -22,7 +23,7 @@ import AvatarGroup from '../../components/AvatarGroup';
 import ProgressBar from '../../components/ProgressBar';
 
 import {colors} from '../../utils/colors';
-import {fontFamily} from '../../utils/constant';
+import {dateFormat, fontFamily} from '../../utils/constant';
 
 import {globalStyles} from '../../styles/globalStyles';
 
@@ -98,7 +99,7 @@ const Home = (props: TProps) => {
                 <Space height={16} />
 
                 <RowSystem justifyContent="flex-start">
-                  <Tag text="March 22" />
+                  <Tag text={dayjs().format(dateFormat.MONTH_DIGIT_YEAR)} />
                 </RowSystem>
               </View>
 

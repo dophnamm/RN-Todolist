@@ -8,3 +8,11 @@ export type TTask = {
   color?: string;
   fileUrls?: string[];
 };
+
+export type TPayloadTask = {
+  title?: string;
+  description?: string;
+  dueDate?: string | null;
+  members?: string[];
+  attachments?: string[];
+};
