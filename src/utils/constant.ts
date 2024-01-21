@@ -26,6 +26,7 @@ export const dateFormat = {
   FORMAT_TODAY: 'Do',
   MONTH_YEAR_FORMAT: 'MM/YYYY',
   MONTH_DAY_FORMAT: 'MMM D,',
+  MONTH_DIGIT_YEAR: 'MMMM YY',
 };
 
 export const timeFormat = {
@@ -39,3 +40,9 @@ export const timeFormat = {
   __FULL_DAY_FORMAT__: 'DD-MM-YYYY HH:mm',
   FULL_DAY_FORMAT_VN_2: 'h:mm A D/M/YYYY',
 };
+
+export const STRING_EMPTY = '--';
+
+export const pathFolderUsers = 'users';
+export const pathFolderDocs = 'documents';
+export const pathFolderTasks = 'tasks';
